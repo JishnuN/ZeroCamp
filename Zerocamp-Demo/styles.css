@@ -1,0 +1,370 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto+Mono:wght@400;600&display=swap');
+
+/* reset */
+
+  *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  :root{
+    --primary-text-color:rgb(15, 15, 15);
+    --secondary-text-color:rgb(29, 27, 27);
+    --padding-inline-section:20px;
+  }
+  body{
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-text-color);
+    
+
+  }
+  h1{
+    font-size: 3rem;
+  }
+  h2{
+    font-size: 2rem;
+  }
+  h3{
+    font-size: 1.5rem;
+  }
+  p{
+    font-family: 'Roboto' sans-serif;
+    font-size: 1.25rem;
+    color: var(--secondary-text-color);
+  }
+  a{
+    text-decoration: none;
+    color: var(--primary-text-color);    
+  }
+  li{
+    list-style: none;
+  }
+
+/* utility class */
+
+.container{
+  max-width: 1180px; /* defing maximum width to maintain the structure */
+  margin-inline: auto; /* left right margin */
+  padding-inline: var(--padding-inline-section);/*  */
+}
+.flex{
+  display: flex;
+}
+.button{
+  border: 2px solid transparent;
+  padding: 10px 20px;
+  border-radius: 40px;
+
+}
+.button:hover{
+  border: 2px solid black;
+}
+.button:active{
+  background-color: black;
+  color: white;
+}
+.small-text{
+  font-size: 1rem;
+}
+.margin{
+  height: 100vh;
+}
+.space{
+  height: 20px;
+}
+
+
+/* nav section */
+
+.nav-div{
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.nav-list{
+  justify-content: end;
+  gap: 40px;
+}
+.links{
+  flex-basis: 730px;
+  color: var(--primary-text-color);
+  transition: 0.2s ease;
+
+}
+.logo h2{
+  letter-spacing: -3;
+  animation:logotrans 2s 2s forwards;
+  
+}
+
+/* header section */
+
+.hero{
+  /* border: 2px solid; */
+  justify-content: space-evenly;
+  margin-top: 20px;
+  align-items: center;
+  /* flex-wrap: wrap; */
+}
+.hero-image img{
+  width: 550px;
+  pointer-events: none;
+}
+.hero-image {
+  align-self: flex-start;
+  
+}
+.hero-text{
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 40vw;
+}
+.join{
+  border: 2px solid black;
+  padding: 10px 20px;
+  border-radius:40px;
+  transition: all 1s;
+
+}
+.join:hover{
+ animation:color 1s  infinite alternate;
+ color: white;
+ box-shadow: 2px 2px 1px rgb(0, 0, 0);
+ transform: rotate(360deg);
+}
+
+/* languages */
+
+
+/* about */
+
+.about{
+  margin-block: 20px;
+  gap: 20px;
+  flex-direction: column;
+}
+.highlights-div{
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-block: 20px;
+}
+.highlight{
+  /* border: 2px solid black; */
+  /* height: 300px; */
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 2px 2px 10px 2px gray;
+  border-radius: 10px; 
+}
+.highlight:hover{
+  /* transform: scale(1.1); */
+  animation-name: movement;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+/* languages section */
+.lang-icons{
+  justify-content: space-around;
+  margin-block: 50px;
+  align-items: center;
+}
+
+.lang-icons img{
+  height:40px;
+}
+
+/* faq section */
+.qs{
+  justify-content: space-evenly;
+
+}
+.questions{
+  margin: 20px auto;
+  width: 100%;
+  max-width: 550px;
+}
+.questions li{
+  list-style: none;
+  margin-bottom: 4px;
+
+}
+.radio{
+  display: none;
+}
+.questions li label{
+  padding: 20px;
+  border: 1px solid;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.questions li label::after{
+  content: "+";
+  font-size: 34px;
+  position: absolute;
+  right: 20px;
+  transition: transform 0.5s;
+}
+.answer{
+  border: 1px transparent;
+  text-align: left;
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 2px;
+  padding: 0px 20px;
+  transition: max-height 0.5s, padding 0.5s;
+}
+.answer p{
+  font-size: 15px;
+}
+.questions .radio:checked + label + .answer {
+  max-height: 600px;
+  padding: 10px 20px;
+  border: 1px solid black;
+}
+.questions .radio:checked + label::after{
+  transform: rotate(135deg);
+}
+.faq form{
+  margin: 20px;
+}
+.faq form label{
+  font-size: 20px;
+}
+
+/* join */
+.connect{
+  background-color: black;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+
+
+}
+.form-btn{
+  border: 2px solid white;
+  padding: 10px 20px;
+  border-radius: 40px;
+  color: white;
+  transition: all ease-in-out .5s;
+}
+.form-btn:hover{
+  background-color: white;
+  color: black;
+  transform: rotate(30deg);
+}
+.form-para{
+  color: white;
+}
+.footer-div{
+  justify-content: space-evenly;
+  margin: 40px;
+}
+.footer{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.cr{
+  text-align: center;
+}
+
+@keyframes movement {
+  0% {
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(1.1);
+  }
+}
+@keyframes color {
+  0%{
+    background-color: rgb(0, 136, 255);
+  }
+  10%{
+    background-color: rgb(255, 17, 0);
+  }
+  20%{
+    background-color: rgb(255, 145, 0);
+  }
+  30%{
+    background-color: rgb(123, 255, 0);
+  }
+  40%{
+    background-color: rgb(0, 255, 234);
+  }
+  50%{
+    background-color: rgb(0, 47, 255);
+  }
+  60%{
+    background-color: rgb(153, 0, 255);
+  }
+  70%{
+    background-color: rgb(234, 0, 255);
+  }
+  80%{
+    background-color: rgb(255, 0, 212);
+  }
+  90%{
+    background-color: rgb(240, 5, 25);
+  }
+  100%{
+    background-color: aliceblue;
+  }
+}
+@keyframes logotrans {
+  0%{
+    color: rgb(0, 136, 255);
+  }
+  10%{
+    color: rgb(255, 17, 0);
+  }
+  20%{
+    color: rgb(255, 145, 0);
+  }
+  30%{
+    color: rgb(123, 255, 0);
+  }
+  40%{
+    color: rgb(0, 255, 234);
+  }
+  50%{
+    color: rgb(0, 47, 255);
+  }
+  60%{
+    color: rgb(153, 0, 255);
+  }
+  70%{
+    color: rgb(234, 0, 255);
+  }
+  80%{
+    color: rgb(255, 0, 212);
+  }
+  90%{
+    color: rgb(240, 5, 25);
+  }
+  100%{
+    color: rgb(0, 0, 0);
+}
+}
+
+@keyframes logocolor {
+  0%{
+    color: rgb(255, 255, 255);
+  }
+  100%{
+    color: rgb(0, 0, 0);
+}
+}
